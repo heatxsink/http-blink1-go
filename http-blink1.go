@@ -43,7 +43,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		b.SetRGB(0, 0, 0)
 	}
 	
-	fmt.Fprintf(w, "Light is %s", color)
+	fmt.Fprintf(w, "The blink(1) is %s", color)
 }
 
 func main() {
