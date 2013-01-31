@@ -3,7 +3,7 @@ http-blink1-go
 this project demonstrates manipulating a [ThingM blink(1)](http://thingm.com/products/blink-1.html) over http, because well everything should eventually have an http interface on it right?
 
 ## to run ##
-1. $ go get github.com/heatxsink/blink1-go/blink1
+1. $ go get github.com/heatxsink/blink1-go
 1. $ go run http-blink1.go
 
 ## the license ##
