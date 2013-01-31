@@ -14,33 +14,36 @@ import (
 	"net/http"
 )
 
+var (
+	blink_usb = blink1.NewBlink()
+)
+
 func handler(w http.ResponseWriter, r *http.Request) {
 	param := r.URL.Path[1:]	
-	b := blink1.NewBlink()
 	color := "off"
 	
 	if param == "red" {
-		b.SetRGB(255, 0, 0)
+		blink_usb.SetRGB(255, 0, 0)
 		color = "red"
 	} 
 	
 	if param == "green" {
-		b.SetRGB(0, 255, 0)
+		blink_usb.SetRGB(0, 255, 0)
 		color = "green"
 	}
 	
 	if param == "blue" {
-		b.SetRGB(0, 0, 255)
+		blink_usb.SetRGB(0, 0, 255)
 		color = "blue"
 	}
 	
 	if param == "white" {
-		b.SetRGB(255, 255, 255)
+		blink_usb.SetRGB(255, 255, 255)
 		color = "white"
 	}
 
 	if param == "" {
-		b.SetRGB(0, 0, 0)
+		blink_usb.SetRGB(0, 0, 0)
 	}
 	
 	fmt.Fprintf(w, "The blink(1) is %s", color)
